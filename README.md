@@ -12,9 +12,10 @@ The Questionnaire Application is a WPF-based quiz game that gets ( fetches ) mul
 - Andres Deklerck
 
 ## Screenshots
-![Start Screen](screenshots/start_screen.png)
-![Question Screen](screenshots/question_screen.png)
-![Game Over Screen](screenshots/game_over_screen.png)
+![Homepage](images/homescreen.png)
+![Question Screen](images/question.png)
+![Aboutpage](images/Aboutpage.png)
+!Leaderboard](images/leaderboard.png)
 
 ## Setup and Usage
 ### Prerequisites

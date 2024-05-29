@@ -29,6 +29,12 @@ The Questionnaire Application is a WPF-based quiz game that gets ( fetches ) mul
 4. Build the solution to restore the necessary packages and compile the project.
 5. Run the application from Visual Studio (F5).
 
+##Future Improvements
+Future improvements for this project are :
+-  Adding difficulty ( I tried it in this project, but didn't work )
+-  More styling
+-  Add a timer ( answer questions as fast as possible to beat the timer )
+
 ## UML Class Diagrams
 ### QuestionnaireLibrary
 ```plaintext

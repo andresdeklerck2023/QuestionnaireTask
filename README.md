@@ -32,12 +32,76 @@ The Questionnaire Application is a WPF-based quiz game that gets ( fetches ) mul
 ## UML Class Diagrams
 ### QuestionnaireLibrary
 ```plaintext
-+-----------------------------+
-|     TriviaMultipleChoiceQuestion     |
-+-----------------------------+
-| - string Category            |
-| - string Difficulty          |
-| - Question Question          |
-| - List<string> IncorrectAnswers |
-| - string CorrectAnswer       |
-+-----------------------------+
++-------------------------------+
+|        Project                |
++-------------------------------+
+| - QuestionnaireLibrary        |
+| - ScoreboardLibrary           |
+| - TriviaApiLibrary            |
+| - ConsoleApp                  |
+| - WpfApp                      |
++-------------------------------+
+
++--------------------+     +---------------------+
+|      Question      |     |        Answer       |
++--------------------+     +---------------------+
+| - text: string     |     | - text: string      |
+| - answers: List<Answer>| | - isCorrect: bool   |
++--------------------+     +---------------------+
+| + Question(text: string,| + Answer(text: string, |
+|   answers: List<Answer>)|   isCorrect: bool)   |
+| + getAnswers(): List<Answer>|                  |
+| + getCorrectAnswer(): Answer|                  |
++--------------------+     +---------------------+
+
++-----------------------+
+|     Scoreboard        |
++-----------------------+
+| - scores: List<PlayerScore> |
++-----------------------+
+| + addPlayer(player: string, score: int): void |
+| + sortScoreboard(): void |
+| + getScores(): List<PlayerScore> |
++-----------------------+
+
++-----------------------+
+|     PlayerScore       |
++-----------------------+
+| - player: string      |
+| - score: int          |
++-----------------------+
+| + PlayerScore(player: string, score: int) |
++-----------------------+
+
++---------------------------+
+|    MainWindow             |
++---------------------------+
+| - questionList: List<Question> |
+| - currentQuestion: Question |
++---------------------------+
+| + MainWindow()             |
+| + displayQuestion(question: Question): void |
+| + submitAnswer(answer: Answer): void |
+| + showScoreboard(): void  |
++---------------------------+
+
++---------------------------+
+|    AboutWindow            |
++---------------------------+
+| + AboutWindow()           |
++---------------------------+
+
++-------------------------------+
+|  TriviaApiRequester           |
++-------------------------------+
+| + RequestRandomQuestion(): Question |
++-------------------------------+
+
++---------------------------+
+|  IQuestionHandler         |
++---------------------------+
+| + handleQuestion(question: Question): void |
++---------------------------+
+
+
+
